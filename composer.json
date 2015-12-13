@@ -1,0 +1,23 @@
+{
+  "name": "root/create-workout",
+  "authors": [
+    {
+      "name": "Janez Šarlah",
+      "email": "janez.sarlah@gmail.com"
+    }
+  ],
+  "description": "A simple create your own workout",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Workout\\": "app/Workout"
+    }
+  },
+  "require": {
+    "slim/slim": "^2.6",
+    "illuminate/database": "^5.1",
+    "slim/views": "^0.1.3",
+    "twig/twig": "^1.23",
+    "phpmailer/phpmailer": "^5.2"
+  }
+}

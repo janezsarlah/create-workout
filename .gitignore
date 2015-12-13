@@ -1,0 +1,6 @@
+# Ignore files
+
+/vendor
+/node_modules
+.idea/
+composer.lock

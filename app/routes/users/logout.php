@@ -3,7 +3,7 @@
 $app->get('/logout', function () use ($app) {
 
   unset($_SESSION['username']);
-  unset($_SESSION['email']);
+  unset($_SESSION['id']);
   $app->redirect('/login');
 
 })->name('users.logout');

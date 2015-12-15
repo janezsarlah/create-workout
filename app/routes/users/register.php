@@ -57,7 +57,14 @@ $app->map('/register', function () use ($app) {
     }
 
   } else {
-    $app->render('users/register.twig');
+
+    if (isset($_SESSION['id'])) {
+      $app->redirect('/dashboard');
+    }
+
+    $app->render('users/register.twig', [
+      'loggedin' => empty($user) ? false : true
+    ]);
   }
 
 })->via('GET', 'POST')->name('users.register');

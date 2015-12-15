@@ -4,8 +4,6 @@ session_start();
 
 use Illuminate\Database\Capsule\Manager as Captule;
 
-
-
 require 'vendor/autoload.php';
 require 'config/database.php';
 require 'middleware/auth.php';
@@ -15,6 +13,7 @@ $app = new \Slim\Slim([
   'mode' => 'development'
 ]);
 
+$app->add(new \Slim\Middleware\SessionCookie(['secret' => 'myappsecret']));
 
 $app->configureMode('test', function () use ($app) {
   $app->config([
@@ -53,8 +52,4 @@ $view->parserExtensions = [
   new \Slim\Views\TwigExtension()
 ];
 
-require 'assets/partials/header.php';
-
 require 'routes.php';
-
-require 'assets/partials/footer.php';

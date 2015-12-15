@@ -1,8 +1,16 @@
 <?php
 
+use Workout\Models\User;
+
 $app->get('/', function () use ($app) {
 
-  $app->redirect('/login');
-  //$app->render('home.twig');
+  if (isset($_SESSION['id'])) {
+    $user = User::find($_SESSION['id']);
+  }
 
-})->setName('home');
+  $app->render('guest/home.twig', [
+    'title'     => 'Create Workout',
+    'logged'    => empty($user) ? false : true
+  ]);
+
+})->name('home');

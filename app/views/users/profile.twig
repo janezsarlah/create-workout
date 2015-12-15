@@ -1,0 +1,51 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+  <div class="row">
+    <div class="col-md-6">
+
+      <a href="/dashboard"><button class="button-back btn btn-info">Back</button></a>
+
+
+      {% if message %}
+        <div class="alert alert-success" role="alert">
+          <span class="glyphicon glyphicon-exclamation-ok" aria-hidden="true"></span>
+          <span class="sr-only">Success:</span>
+          {{ message }}
+        </div>
+      {% endif %}
+
+      <div class="panel panel-default">
+        <div class="panel-heading">{{ email }}</div>
+        <div class="panel-body">
+          <form role="form" action="/user/profile" method="post">
+            <fieldset>
+              <div class="form-group">
+                <input class="form-control" name="username" type="text" value="{{ username }}" required>
+              </div>
+              <div class="form-group">
+                <input class="form-control" placeholder="First name" name="first_name" type="text" value="{{ fist_name }}">
+              </div>
+              <div class="form-group">
+                <input class="form-control" placeholder="Last name" name="last_name" type="text" value="{{ last_name }}" >
+              </div>
+              <div class="form-group">
+                <input class="form-control pass" placeholder="New Password" name="new_password" type="password" value="" >
+              </div>
+              <div class="form-group">
+                <input class="form-control pass" placeholder="New Password again" name="new_password_again" type="password" value="" >
+              </div>
+
+              <input type="submit" value="Update profile" class="btn btn-primary">
+            </fieldset>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+{% endblock %}

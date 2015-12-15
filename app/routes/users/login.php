@@ -17,7 +17,7 @@ $app->map('/login', function () use ($app) {
     if ($user && password_verify($password, $user->password)) {
 
       $_SESSION['username'] = $user->username;
-      $_SESSION['email'] = $user->first_name;
+      $_SESSION['id'] = $user->id;
 
     } else {
       $errors[] = "The email and password don't match!";
@@ -34,10 +34,10 @@ $app->map('/login', function () use ($app) {
 
   } else {
 
-    if (isset($_SESSION['username'])) {
+    if (isset($_SESSION['id'])) {
       $app->redirect('/dashboard');
     } else {
-      $app->render('users/login.twig');
+      $app->render('/users/login.twig');
     }
 
   }

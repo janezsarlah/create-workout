@@ -7,7 +7,9 @@ class User extends Eloquent {
   protected $fillable = ['first_name', 'last_name', 'username', 'email'];
 
   public function workouts() {
-    return $this->hasMany('Workout', 'user_id');
+
+    return $this->hasMany('\Workout\Models\Workout');
+
   }
 
 }

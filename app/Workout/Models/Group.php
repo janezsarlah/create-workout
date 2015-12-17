@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class Workout extends Eloquent {
+class Group extends Eloquent {
 
   public $timestamps = false;
 
@@ -12,11 +12,4 @@ class Workout extends Eloquent {
 
   }
 
-  public function user() {
-
-    return $this->belongsTo('\Workout\Models\User');
-
-  }
-
 }
-

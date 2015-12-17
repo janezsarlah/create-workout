@@ -1,3 +1,4 @@
+
 .register {
   margin-top: 10px;
 }
@@ -37,6 +38,47 @@ button.login {
   margin-bottom: 20px;
 }
 
+.login-alert {
+  margin-top: 50px;
+  margin-bottom: -30px;
+}
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+  background-color: #e1e1e1;
+  cursor: pointer;
+}
+
+.group {
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.group.back { background-color: #8ad919; }
+.group.chest { background-color: #5cb85c; }
+.group.shoulders { background-color: #5bc0de; }
+.group.abs { background-color: #f0ad4e; }
+.group.biceps { background-color: #d9534f; }
+.group.triceps { background-color: #428bca; }
+.group.legs { background-color: #d9edf7; }
 
 
+.exercise-image {
+  max-width: 400px;
+  margin: 0 auto;
+}
 
+.description-container .title {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.description-container .exercise-tags .title {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.group {
+  font-size: 18px;
+}

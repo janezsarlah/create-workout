@@ -1,0 +1,44 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+  <div class="row">
+
+    <div class="col-md-12">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          {{ exercises.exercise_name }}
+        </div>
+        <div class="panel-body">
+
+          <div class="col-md-4 exercise-image">
+            <img style="width:100%;" src="{{ exercises.exercise_image }}">
+          </div>
+
+          <div class="col-md-8 description-container">
+            <div class="exercise-description">
+              <div class="title">Description:</div>
+              {{ exercises.exercise_description }}
+            </div>
+
+            <div class="exercise-tags">
+              <div class="title">Muscle groups:</div>
+              {% for group in exercises.groups %}
+
+                <span class="group {{ group.muscle_group_name|lower }}">{{ group.muscle_group_name }}</span>
+
+              {% endfor %}
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+
+{% endblock %}

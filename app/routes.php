@@ -10,5 +10,6 @@ require 'routes/users/activate.php';
 require 'routes/users/profile.php';
 
 require 'routes/dashboard/home.php';
+require 'routes/dashboard/exercises-list.php';
 
 require 'routes/workouts/workouts.php';

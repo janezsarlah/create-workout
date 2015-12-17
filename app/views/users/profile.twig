@@ -9,10 +9,8 @@
 
 
       {% if message %}
-        <div class="alert alert-success" role="alert">
-          <span class="glyphicon glyphicon-exclamation-ok" aria-hidden="true"></span>
-          <span class="sr-only">Success:</span>
-          {{ message }}
+        <div class="alert bg-success" role="alert">
+          <svg class="glyph stroked cancel"><use xlink:href="#stroked-checkmark"></use></svg> {{ message }} <a href="#" class="pull-right remove-alert"><span class="glyphicon glyphicon-remove"></span></a>
         </div>
       {% endif %}
 

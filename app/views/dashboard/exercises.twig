@@ -5,31 +5,28 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="panel panel-default">
-        <div class="panel-heading">Find tour exercise</div>
+        <div class="panel-heading">Find your exercise</div>
         <div class="panel-body table-responsive">
-          <table class="table table-striped table-hover">
+          <table class="table table-striped table-hover" data-toggle="table" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="asc">
 
             <thead>
               <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Short description</th>
-                <th>Groups</th>
+                <th data-field="state" data-checkbox="true" >Item ID</th>
+                <th data-field="id" data-sortable="true">Workout name</th>
+                <th data-field="name"  data-sortable="true">Short description</th>
+                <th data-field="price" data-sortable="true">Groups</th>
               </tr>
             </thead>
 
             <tbodt>
               {% for exercise in exercises %}
-                {% set count = count + 1 %}
-                <tr class='clickable-row' data-href='/dashboard/exercises/{{ exercise.slug }}'>
-                  <td>{{ count }}</td>
-                  <td>{{ exercise.exercise_name }}</td>
+                <tr >
+                  <td>stock value</td>
+                  <td><a href="/dashboard/exercises/{{ exercise.slug }}"> {{ exercise.exercise_name }}</a></td>
                   <td class="exercises description">{{ exercise.exercise_description|slice(0, 80) ~ '...' }}</td>
                   <td>
                     {% for group in exercise.groups %}
-
                       <span class="group {{ group.muscle_group_name|lower }}">{{ group.muscle_group_name }}</span>
-
                     {% endfor %}
                   </td>
                 </tr>

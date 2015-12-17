@@ -1,14 +1,11 @@
 <?php
 
 use Workout\Models\Workout;
+use Workout\Models\User;
 
-$app->get('/workouts', function () use ($app) {
+$app->get('/dashboard/workouts', $authenticate($app), function () use ($app) {
 
-  try {
-    $workouts = Workout::all();
-  } catch (ErrorException $e) {
-    var_dump($e);
-  }
+
 
 });
 
